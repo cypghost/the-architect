@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Transition } from '@headlessui/react'
 import Image from 'next/image'
+import useTranslation from "next-translate/useTranslation";
 
 export default function Features() {
   
@@ -18,6 +19,8 @@ export default function Features() {
     heightFix()
   }, []) 
 
+  const { t } = useTranslation("common");
+
   return (
     <section className="relative">
       {/* Section background (needs .relative class on parent and next sibling elements) */}
@@ -31,11 +34,9 @@ export default function Features() {
         <div className="pt-12 md:pt-20">
           {/* Section header */}
           <div className="max-w-3xl mx-auto md:text-center pb-12 md:pb-16">
-            <h1 className="h2 mb-4">Explore the solutions</h1>
+            <h1 className="h2 mb-4">{t("f_header")}</h1>
             <p className="text-xl text-gray-600">
-              The Architect is a fine tuned assistant for Architects that
-              assists the architectural development from idea generation to
-              final design product.
+              {t("f_header_desc")}
             </p>
           </div>
 
@@ -47,11 +48,9 @@ export default function Features() {
               data-aos="fade-right"
             >
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
-                <h3 className="h3 mb-3">Powerful suite of tools</h3>
+                <h3 className="h3 mb-3">{t("f_content")}</h3>
                 <p className="text-xl text-gray-600">
-                  It&apos;s an AI-powered platform that empowers professionals
-                  and enthusiasts in the field of architecture and design by
-                  offering a wide range of features and tools.
+                  {t("f_content_desc")}
                 </p>
               </div>
               {/* Tabs buttons */}
@@ -68,13 +67,13 @@ export default function Features() {
                     setTab(1);
                   }}
                 >
+                  {/* Tabs_1 */}
                   <div>
                     <div className="dark:text-black font-bold leading-snug tracking-tight mb-1">
-                      Virtual Architectural Design Assistant
+                      {t("f_tabs_1")}
                     </div>
                     <div className="text-gray-600">
-                      Our platform assists architects in generating design
-                      concepts, offering feedback, and suggesting alternatives.
+                      {t("f_tabs_1_desc")}
                     </div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3 dark:text-black ">
@@ -99,14 +98,13 @@ export default function Features() {
                     setTab(2);
                   }}
                 >
+                  {/* Tabs_2 */}
                   <div>
                     <div className="dark:text-black font-bold leading-snug tracking-tight mb-1">
-                      Creativity Enhancement
+                    {t("f_tabs_2")}
                     </div>
                     <div className="text-gray-600">
-                      We help you to generate creative ideas, offering
-                      inspirations, and refine your initial designs through
-                      conversational feedback.
+                    {t("f_tabs_2_desc")}
                     </div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3 dark:text-black ">
@@ -134,14 +132,13 @@ export default function Features() {
                     setTab(3);
                   }}
                 >
+                  {/* Tabs_3 */}
                   <div>
                     <div className="dark:text-black font-bold leading-snug tracking-tight mb-1">
-                      Market Research Trend Analysis and Cost Estimation
+                    {t("f_tabs_3")}
                     </div>
                     <div className="text-gray-600">
-                      The Architects Platform streamlines financial planning by
-                      assisting in generating accurate cost estimates and
-                      budgets for architectural projects.
+                    {t("f_tabs_3_desc")}
                     </div>
                   </div>
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3 dark:text-black ">
